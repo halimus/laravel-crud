@@ -54,19 +54,18 @@ echo json_encode([
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="aaaaaaaa">New Article</a></li>
-                                    <li><a href="aaaaaaaa">Articles List</a></li>
+                                    <li><a href="{{ url('articles/create') }}">New Article</a></li>
+                                    <li><a href="{{ url('articles') }}">Articles List</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="aaaaaaaa">Articles List (Datatables)</a></li>
+                                    <li><a href="{{ url('articles2') }}">Articles List (Datatables)</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="aaaaaaa">Manage Users</a></li>
+                                    <li><a href="{{ url('users') }}">Manage Users</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="aaaaaa">Other Settings</a></li>
-
+                                    <li><a href="{{ url('settings') }}">Other Settings</a></li>
                                 </ul>
                             </li>
                             @endif
@@ -83,19 +82,20 @@ echo json_encode([
                             @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ url('/profile') }}">Profile</a></li>
+                                    <li><a href="{{ url('/profile') }}">Edit Profile</a></li>
                                     <li><a href="{{ url('/password') }}">Change password</a></li>
+                                    <li class="divider"></li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                            onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
-
+                                        
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
