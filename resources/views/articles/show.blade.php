@@ -1,12 +1,19 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
+    <div class="row">
 
-    <h1>{{$article->title}}</h1>
+        <div class="col-md-8 col-md-offset-2">
+            <h2>{{$article->title}} <a href="{{ url('articles') }}" style="float: right;font-size: 18px;">Articles List</a></h2>
 
-    <article>
-        {{ $article->body }}
-    </article>
+            <article>
+                {{ $article->body }}
+            </article>
 
-@stop
+        </div>
+        
+    </div>
+</div>
+@endsection
 

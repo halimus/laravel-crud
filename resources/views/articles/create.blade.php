@@ -4,12 +4,14 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-md-6 col-md-offset-3">
-            <h2>Create Article</h2>
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Create Article <a href="{{ url('articles') }}" style="float: right;font-size: 18px;">Articles List</a></h2>
 
             @include('articles.errors')
 
-            {!! Form::open(['url' => 'articles']) !!}
+           {!! Form::open(['url' => 'articles']) !!}
+               
+               
 
             @include('articles.form', ['submitButtonName' => 'Add the Article'])
 
