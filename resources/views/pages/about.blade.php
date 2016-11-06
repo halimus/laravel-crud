@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Welcone</div>
+                <div class="panel-heading">About</div>
 
                 <div class="panel-body">
-                    Welcome to Laravel
+                    You are in About page
                 </div>
             </div>
         </div>
