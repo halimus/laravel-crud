@@ -109,6 +109,7 @@ echo json_encode([
             </nav>
 
             @yield('content')
+            
         </div>
 
         <!-- Scripts -->
