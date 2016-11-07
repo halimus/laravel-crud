@@ -27,6 +27,7 @@ class ArticlesController extends Controller {
      * @return Response
      */
     public function index() {
+        
         //return \Auth::user();
         //$articles = Article::all();
         //$articles = Article::latest()->get();

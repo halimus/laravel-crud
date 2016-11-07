@@ -50,6 +50,14 @@ Route::get('password', 'ProfileController@password');
  * Settings routes
  */
 Route::get('settings', 'SettingsController@index');
+
+
+/*
+ * Users routes
+ */
 Route::get('users', 'UsersController@index');
-
-
+Route::get('users/create', 'UsersController@create');
+Route::post('users', 'UsersController@store');
+Route::get('users/{id}/edit', 'UsersController@edit');
+Route::patch('users/{id}', 'UsersController@update');
+Route::delete('users/{id}', 'UsersController@destroy');
