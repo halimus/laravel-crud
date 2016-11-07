@@ -28,7 +28,7 @@
                             <a href="{{ url("users/$user->users_id/edit")}}" class="btn btn-info" role="button">edit</a>
                         </td>
                         <td>
-                            {{ Form::open(array('url' => 'users/' . $user->id)) }}
+                            {{ Form::open(array('url' => 'users/' . $user->users_id)) }}
                             {{ Form::hidden('_method', 'DELETE') }}
                             {{ Form::submit('delete', array('class' => 'btn btn-danger')) }}
                             {{ Form::close() }}

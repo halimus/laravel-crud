@@ -57,6 +57,7 @@ Route::get('settings', 'SettingsController@index');
  */
 Route::get('users', 'UsersController@index');
 Route::get('users/create', 'UsersController@create');
+Route::get('users/{id}', 'UsersController@show');
 Route::post('users', 'UsersController@store');
 Route::get('users/{id}/edit', 'UsersController@edit');
 Route::patch('users/{id}', 'UsersController@update');

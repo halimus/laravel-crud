@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //use Illuminate\Http\Request;
 use App\User;
 use Request; 
+use App\Http\Requests;
 //use Illuminate\Support\Facades\Redirect;
 //use Illuminate\Support\Facades\Input;
 //use Illuminate\Support\Facades\Validator;
@@ -41,14 +42,15 @@ class UsersController extends Controller {
      *
      * @return Response
      */
-    public function store() {
+    public function store(Requests\UsersRequest $request) {
         
           
-        $input = Request::all();
-        User::create($input);
+        //$input = Request::all();
+        //User::create($input);
          
-
-        //User::create($request->all());
+        $request['password'] = bcrypt($request['password']);
+        User::create($request->all());
+        
         
          
         return redirect('users');
@@ -123,6 +125,48 @@ class UsersController extends Controller {
             'email.required' => 'The Last Name is required.',
             'password.alpha' => 'The Last Name may only contain letters.'
         ];
+    }
+    
+    
+     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */  
+    public function show($id) {
+        
+        $user = User::findOrFail($id);
+        return view('users.show', compact('user'));
+        
+    }
+
+    
+    
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id) {
+        $user = User::findOrFail($id);
+        
+        //dd($user);
+        
+        $user->delete();
+        return redirect('users');
+    }
+    
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id) {
+        $user = User::findOrFail($id);
+        return view('users.edit', compact('user'));
     }
 
 }
