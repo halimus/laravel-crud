@@ -206,7 +206,7 @@ class UsersController extends Controller {
         return view('users.reset_password', compact('user'));
     }
     /*
-     * 
+     * Update password
      */
     public function update_password($id) {
         $user = User::findOrFail($id);
@@ -221,6 +221,7 @@ class UsersController extends Controller {
             //return Redirect::to("/users/$id/edit")->withInput()->withErrors($validator);
             return back()->withErrors($validator)->withInput();
         }
+        
         else {
             
            $password = bcrypt(Request::get('password'));
