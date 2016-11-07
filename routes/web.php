@@ -34,3 +34,22 @@ Route::get('/about', 'AboutController@index');
 
 
 Route::resource('articles', 'ArticlesController');
+
+/*
+ * Datatables routes
+ */
+Route::get('articles2', 'Articles2Controller@index');
+
+/*
+ * Profile routes
+ */
+Route::get('profile', 'ProfileController@profile');
+Route::get('password', 'ProfileController@password');
+
+/*
+ * Settings routes
+ */
+Route::get('settings', 'SettingsController@index');
+Route::get('users', 'UsersController@index');
+
+
