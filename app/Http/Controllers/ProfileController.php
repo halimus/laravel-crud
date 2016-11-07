@@ -7,9 +7,10 @@ namespace App\Http\Controllers;
 use App\User;
 use Request;
 use App\Http\Requests;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Hash;
+use Session;
 
 class ProfileController extends Controller {
     /*
@@ -50,7 +51,6 @@ class ProfileController extends Controller {
             //return Redirect::to('users');
             return redirect('profile');
         }
-        
     }
 
     /**
@@ -67,7 +67,7 @@ class ProfileController extends Controller {
 
     public function change_password() {
         $user = Auth::user();
-        
+
         $rules = array(
             'old_password' => 'required',
             'password' => 'required|min:6|confirmed',
@@ -75,21 +75,33 @@ class ProfileController extends Controller {
             'password_confirmation' => 'required|min:6',
         );
         
+        $old_password = Request::get('old_password');
+
         $validator = Validator::make(Request::all(), $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
-        }
+        } 
         else {
-           $password = bcrypt(Request::get('password'));
-           $user->update(['password' => $password]);
-           //return Redirect::to('users');
-           return redirect('password');
+            /*if (!$hasher->check($oldPassword, $user->password) || $password != $passwordConf) {
+                Session::flash('error', 'Check input is correct.');
+                return View::make('passwords/reset');
+            }*/
+            //if (Hash::check($current_password, $user->password) && $user_count == 1) {
+            
+            //if (Hash::check($current_password, $user->password) && $user_count == 1) {
+
+            if(!Hash::check($old_password, $user->password)){
+                //die('machi kif kif');
+                Session::flash('error', 'The old password is incorect');
+                return redirect('password');
+            }
+            
+            $password = bcrypt(Request::get('password'));
+            $user->update(['password' => $password]);
+            return redirect('password');
         }
-        
     }
 
-    
-    
     /**
      * Get the validation rules that apply to the request.
      *
@@ -101,6 +113,5 @@ class ProfileController extends Controller {
             'email' => 'required|email|max:45|unique:users,email, ' . $users_id . ',users_id'
         ];
     }
-    
 
 }
