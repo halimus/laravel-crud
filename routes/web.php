@@ -45,6 +45,9 @@ Route::get('articles2', 'Articles2Controller@index');
  */
 Route::get('profile', 'ProfileController@profile');
 Route::get('password', 'ProfileController@password');
+Route::patch('profile', 'ProfileController@update');
+Route::patch('profile/change_password', 'ProfileController@change_password');
+
 
 /*
  * Settings routes
