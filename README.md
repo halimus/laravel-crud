@@ -9,4 +9,6 @@ Very nice example for everybody who is beginner in Laravel like me ;)
 first thing :
 
 1- Run >php artisan migrate
+
 2- Enjoy
+
