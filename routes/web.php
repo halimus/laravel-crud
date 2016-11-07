@@ -60,7 +60,11 @@ Route::get('users/create', 'UsersController@create');
 Route::get('users/{id}', 'UsersController@show');
 Route::post('users', 'UsersController@store');
 Route::get('users/{id}/edit', 'UsersController@edit');
+
 Route::patch('users/{id}', 'UsersController@update');
+
 Route::delete('users/{id}', 'UsersController@destroy');
 
+
 Route::get('users/{id}/reset_password', 'UsersController@reset_password');
+Route::patch('users/{id}/reset_password', 'UsersController@update_password');

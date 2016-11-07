@@ -21,7 +21,8 @@
                     @endif
 
                      
-                    <form class="form-horizontal" role="form" method="PATCH" action="{{ url('/users', $user->id) }}">
+                    <!--<form class="form-horizontal" role="form" method="PATCH" action="{{ url('/users', $user->id) }}">-->
+                    {!! Form::open(['method' => 'PATCH', 'url' => url('/users/'.$user->users_id.'/reset_password'), 'class' => 'form-horizontal']) !!}
                    
                         {{ csrf_field() }}
 
@@ -56,7 +57,8 @@
                             </div>
                         </div>
                         
-                    </form>
+                    <!--</form>-->
+                    {!! Form::close() !!}
                 
                 </div>
             </div>

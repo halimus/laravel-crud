@@ -9,10 +9,8 @@
 
             @include('articles.errors')
 
-           {!! Form::open(['url' => 'articles']) !!}
+            {!! Form::open(['url' => 'articles']) !!}
                
-               
-
             @include('articles.form', ['submitButtonName' => 'Add the Article'])
 
             {!! Form::close() !!}

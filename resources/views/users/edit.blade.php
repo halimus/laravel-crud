@@ -21,7 +21,8 @@
                     @endif
 
                      
-                    <form class="form-horizontal" role="form" method="PATCH" action="{{ url('/users', $user->id) }}">
+                    <!--<form class="form-horizontal" role="form" method="PATCH" action="{{ url('/users', $user->users_id) }}">-->
+                    {!! Form::model($user, ['method' => 'PATCH', 'url' => url('/users', $user->users_id), 'class' => 'form-horizontal']) !!}
                    
                         {{ csrf_field() }}
 
@@ -63,7 +64,8 @@
                             </div>
                         </div>
                         
-                    </form>
+                    <!--</form>-->
+                    {!! Form::close() !!}
                 
                 </div>
             </div>
