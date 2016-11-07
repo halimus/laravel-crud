@@ -168,5 +168,17 @@ class UsersController extends Controller {
         $user = User::findOrFail($id);
         return view('users.edit', compact('user'));
     }
+    
+    /*
+     * 
+     */
+    public function reset_password($id) {
+        
+        $user = User::findOrFail($id);
+        //dd($user);
+        return view('users.reset_password', compact('user'));
+        
+    }
+    
 
 }

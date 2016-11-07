@@ -62,3 +62,5 @@ Route::post('users', 'UsersController@store');
 Route::get('users/{id}/edit', 'UsersController@edit');
 Route::patch('users/{id}', 'UsersController@update');
 Route::delete('users/{id}', 'UsersController@destroy');
+
+Route::get('users/{id}/reset_password', 'UsersController@reset_password');

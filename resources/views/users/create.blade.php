@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Create New User</div>
+                <div class="panel-heading">Create New User <a href="{{ url('users') }}" style="float: right;"> Users List</a></div>
                 <div class="panel-body">
 
                     @if($errors->any())

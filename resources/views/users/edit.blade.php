@@ -8,7 +8,7 @@
                 <div class="panel-heading">Edit User 
                     <a href="{{ url('users') }}" style="float: right;"> Users List</a>
                     <span style="float: right;margin: 0px 10px;">|</span>
-                    <a href="{{ url('users') }}" style="float: right;">Reset Password </a> 
+                    <a href="{{ url("users/$user->users_id/reset_password") }}" style="float: right;">Reset Password </a> 
                 </div>
                 <div class="panel-body">
 
