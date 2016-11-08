@@ -49,7 +49,23 @@ class ProfileController extends Controller {
         } else {
             $user->update(Request::all());
             //return Redirect::to('users');
+            
+            //Session::flash('flash_message', 'Your profile has been updated!');
+            //Session::flash('flash_message_important', true);
+            
+            //return redirect('profile');
+            
+            /*
+            return redirect('profile')->with([
+                'flash_message' => 'Your profile has been updated!',
+                'flash_message_important' => true   
+            ]);
+            */
+            
+            flash('Your profile has been updated!')->important();
+            
             return redirect('profile');
+            
         }
     }
 
