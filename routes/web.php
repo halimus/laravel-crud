@@ -39,6 +39,13 @@ Route::resource('articles', 'ArticlesController');
  * Datatables routes
  */
 Route::get('articles2', 'Articles2Controller@index');
+Route::get('anyData', 'Articles2Controller@data');
+
+//Route::controller('articles2', 'Articles2Controller', [
+//    'anyData'  => 'datatables.data',
+//    'index' => 'index'
+//]);
+
 
 /*
  * Profile routes

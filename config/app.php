@@ -181,6 +181,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         
         Laracasts\Flash\FlashServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
     ],
 
@@ -234,6 +235,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         
         'Flash' => Laracasts\Flash\Flash::class,
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
 
     ],
 

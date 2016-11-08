@@ -12,10 +12,11 @@
 
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 
         <!-- Scripts -->
-        <script>window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),]); ?>
-        </script>
+        <script>window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),]); ?></script>
     </head>
     <body>
         <div id="app">
@@ -41,6 +42,12 @@
             $('div.alert').not('.alert-important').delay(1500).slideUp(300);
             $('#flash-overlay-modal').modal();
         </script>
+        
+        
+        <!-- DataTables -->
+        <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+        <!-- Datatables -->
+        @stack('scripts')
 
     </body>
 </html>

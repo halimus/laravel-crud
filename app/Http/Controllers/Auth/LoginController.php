@@ -65,7 +65,7 @@ use AuthenticatesUsers;
     public function authenticated($request, $user) {
         
         //flash('Welcome back ' . $user->username . ', you have been logged in');
-        flash()->overlay('Welcome back ' . $user->username . ', you have been logged in');
+        flash()->overlay('Welcome back ' . $user->username . ', you have been logged in', 'Welcome');
         
     }
 
