@@ -10,6 +10,7 @@ use App\Http\Requests;
 //use Illuminate\Support\Facades\Redirect;
 //use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
+use Session;
 
 class UsersController extends Controller {
     /*
@@ -51,6 +52,7 @@ class UsersController extends Controller {
         $request['password'] = bcrypt($request['password']);
         User::create($request->all());
 
+        Session::flash('flash_message', 'User has been created!');
         return redirect('users');
     }
 
@@ -140,9 +142,12 @@ class UsersController extends Controller {
     public function destroy($id) {
         $user = User::findOrFail($id);
 
-        //dd($user);
-
         $user->delete();
+        
+        Session::flash('flash_message', 'User has been deleted!');
+        //Session::flash('flash_message_important', true);
+         //Session::flash('error', 'The old password is incorect');
+        
         return redirect('users');
     }
 
@@ -176,6 +181,8 @@ class UsersController extends Controller {
         }
         else {
            $user->update(Request::all());
+           
+           Session::flash('flash_message', 'User has been updated!');
            //return Redirect::to('users');
            return redirect('users');
         }
@@ -228,6 +235,10 @@ class UsersController extends Controller {
            $user->update(['password' => $password]);
            //return Redirect::to('users');
            //return redirect('users');
+           
+           //Session::flash('flash_message', 'Password has been reseted!');
+           flash()->info('Password has been reseted!');
+           
            return view('users.reset_password', compact('user'));
         }
     }

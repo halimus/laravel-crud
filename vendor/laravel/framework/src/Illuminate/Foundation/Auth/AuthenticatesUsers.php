@@ -143,7 +143,7 @@ trait AuthenticatesUsers
         $request->session()->flush();
 
         $request->session()->regenerate();
-
+        die('pass ici');
         return redirect('/');
     }
 

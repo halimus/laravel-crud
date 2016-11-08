@@ -18,7 +18,7 @@ class ProfileController extends Controller {
      */
 
     public function __construct() {
-        
+        $this->middleware('auth');
     }
 
     /**
@@ -62,7 +62,9 @@ class ProfileController extends Controller {
             ]);
             */
             
-            flash('Your profile has been updated!')->important();
+            //flash('Your profile has been updated!');
+            //flash()->success('Your profile has been updated!');
+            flash()->overlay('Your profile has been updated!', 'Good Job');
             
             return redirect('profile');
             
@@ -98,22 +100,19 @@ class ProfileController extends Controller {
             return back()->withErrors($validator)->withInput();
         } 
         else {
-            /*if (!$hasher->check($oldPassword, $user->password) || $password != $passwordConf) {
-                Session::flash('error', 'Check input is correct.');
-                return View::make('passwords/reset');
-            }*/
-            //if (Hash::check($current_password, $user->password) && $user_count == 1) {
-            
-            //if (Hash::check($current_password, $user->password) && $user_count == 1) {
 
             if(!Hash::check($old_password, $user->password)){
-                //die('machi kif kif');
-                Session::flash('error', 'The old password is incorect');
+                //Session::flash('error', 'The old password is incorect');
+                flash()->error('The old password is incorect!');
+                
                 return redirect('password');
             }
             
             $password = bcrypt(Request::get('password'));
             $user->update(['password' => $password]);
+            
+            flash()->success('Your password has been updated!');
+            
             return redirect('password');
         }
     }
