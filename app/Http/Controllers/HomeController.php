@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Helpers\Utils;
 
 class HomeController extends Controller {
 
@@ -24,6 +25,7 @@ class HomeController extends Controller {
 
         $laravel = app();
         $curent_version = $laravel::VERSION;
+        
         
         //return "Your Laravel version is " . $laravel::VERSION;
         /* You can also browse to and open file 

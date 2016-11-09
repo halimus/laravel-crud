@@ -35,16 +35,13 @@ Route::get('/about', 'AboutController@index');
 
 Route::resource('articles', 'ArticlesController');
 
+
 /*
  * Datatables routes
  */
 Route::get('articles2', 'Articles2Controller@index');
-Route::get('anyData', 'Articles2Controller@data');
+Route::get('articles2/anyData', 'Articles2Controller@anyData');
 
-//Route::controller('articles2', 'Articles2Controller', [
-//    'anyData'  => 'datatables.data',
-//    'index' => 'index'
-//]);
 
 
 /*

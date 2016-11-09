@@ -14,6 +14,8 @@
                     <p>Your Laravel version is : <strong>{{ $curent_version }}</strong></p>
                     <br><br>
                     
+                    <h2>Year from Custom Helpers : {{ \App\Helpers\Utils::getDate() }}</h2>
+                    
                 </div>
             </div>
         </div>

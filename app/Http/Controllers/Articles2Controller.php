@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Yajra\Datatables;
+//use Yajra\Datatables;
+
+use DB;
+use Yajra\Datatables\Facades\Datatables;
 
 class Articles2Controller extends Controller {
     /*
@@ -11,20 +14,16 @@ class Articles2Controller extends Controller {
      */
 
     public function __construct() {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
      * Display a listing of the resource.
-     *
-     * @return Response
-     * Documentation:
      * https://datatables.yajrabox.com/starter#migrate-seed
      * https://github.com/yajra/laravel-datatables
      * http://yajra.github.io/laravel-datatables/
      */
     public function index() {
-
         return view('articles2.index');
     }
 
@@ -33,25 +32,28 @@ class Articles2Controller extends Controller {
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function data() {
-
-        //
+    public function anyData() {
         //return Datatables::of(\App\Article::query())->make(true);
-        return Datatables::queryBuilder(DB::table('articles'))->make(true);
+        
+        $articles = \App\Article::select(['id', 'title', 'body', 'created_at', 'updated_at']);
+        
+        return Datatables::of($articles)
+                        ->editColumn('title', '{{ $title."-title" }}')
+                        ->make();
+        
+    }
 
-        // Using Eloquent
-//        return Datatables::eloquent(User::query())->make(true);
+    public function getBasic() {
+        //return 'yes';
+        return view('datatables.eloquent.basic');
+    }
 
-        // Using Query Builder
-//        return Datatables::queryBuilder(DB::table('users'))->make(true);
+    public function getBasicData() {
+        $users = User::select(['id', 'name', 'email', 'created_at', 'updated_at']);
 
-        // Using Collection
-//        return Datatables::collection(User::all())->make(true);
-
-        // Using the Engine Factory
-//        return Datatables::of(User::query())->make(true);
-//        return Datatables::of(DB::table('users'))->make(true);
-//        return Datatables::of(User::all())->make(true);
+        return Datatables::of($users)
+                        ->editColumn('name', '{{ $name."-name" }}')
+                        ->make();
     }
 
 }

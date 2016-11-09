@@ -29,10 +29,10 @@
 @push('scripts')
 <script>
     $(function () {
-        $('#users-table').DataTable({
+        $('#users-table00').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ url('anyData') }}",
+            ajax: "{{ url('articles2/anyData') }}",
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'title', name: 'title'},
@@ -41,6 +41,15 @@
                 {data: 'updated_at', name: 'updated_at'}
             ]
         });
+
+        $(function () {
+            $('#users-table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{{ url("articles2/anyData") }}'
+            });
+        });
+
     });
 </script>
 @endpush

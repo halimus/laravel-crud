@@ -236,6 +236,8 @@ return [
         
         'Flash' => Laracasts\Flash\Flash::class,
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        
+       // 'Utils'     => App\Helpers\Utils::class,
 
     ],
 
