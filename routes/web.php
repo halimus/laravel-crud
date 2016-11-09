@@ -32,7 +32,6 @@ Route::get('/about', 'AboutController@index');
 //Route::patch('articles/{id}', 'ArticlesController@update');
 //Route::delete('articles/{id}', 'ArticlesController@destroy');
 
-
 Route::resource('articles', 'ArticlesController');
 
 
@@ -42,6 +41,8 @@ Route::resource('articles', 'ArticlesController');
 Route::get('articles2', 'Articles2Controller@index');
 Route::get('articles2/anyData', 'Articles2Controller@anyData');
 
+
+Route::resource('articles3', 'Article3Controller');
 
 
 /*
