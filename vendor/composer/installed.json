@@ -3651,53 +3651,76 @@
         "description": "Easy flash notifications"
     },
     {
-        "name": "tijsverkoyen/css-to-inline-styles",
-        "version": "1.5.5",
-        "version_normalized": "1.5.5.0",
+        "name": "phenx/php-font-lib",
+        "version": "0.4",
+        "version_normalized": "0.4.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
-            "reference": "9753fc340726e327e4d48b7c0604f85475ae0bc3"
+            "url": "https://github.com/PhenX/php-font-lib.git",
+            "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/9753fc340726e327e4d48b7c0604f85475ae0bc3",
-            "reference": "9753fc340726e327e4d48b7c0604f85475ae0bc3",
+            "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
+            "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
             "shasum": ""
         },
-        "require": {
-            "php": ">=5.3.0",
-            "symfony/css-selector": "~2.1|~3.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.0"
-        },
-        "time": "2015-12-08 16:14:14",
+        "time": "2015-05-06 20:02:39",
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.5.x-dev"
-            }
-        },
         "installation-source": "dist",
         "autoload": {
-            "psr-4": {
-                "TijsVerkoyen\\CssToInlineStyles\\": "src"
+            "psr-0": {
+                "FontLib\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "BSD"
+            "LGPL-3.0"
         ],
         "authors": [
             {
-                "name": "Tijs Verkoyen",
-                "email": "css_to_inline_styles@verkoyen.eu",
-                "role": "Developer"
+                "name": "Fabien Ménager",
+                "email": "fabien.menager@gmail.com"
             }
         ],
-        "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
-        "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles"
+        "description": "A library to read, parse, export and make subsets of different types of font files.",
+        "homepage": "https://github.com/PhenX/php-font-lib"
+    },
+    {
+        "name": "phenx/php-svg-lib",
+        "version": "0.1",
+        "version_normalized": "0.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PhenX/php-svg-lib.git",
+            "reference": "b419766515b3426c6da74b0e29e93d71c4f17099"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/b419766515b3426c6da74b0e29e93d71c4f17099",
+            "reference": "b419766515b3426c6da74b0e29e93d71c4f17099",
+            "shasum": ""
+        },
+        "time": "2015-05-06 18:49:49",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Svg\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Ménager",
+                "email": "fabien.menager@gmail.com"
+            }
+        ],
+        "description": "A library to read, parse and export to PDF SVG files.",
+        "homepage": "https://github.com/PhenX/php-svg-lib"
     },
     {
         "name": "phpoffice/phpexcel",
@@ -3757,6 +3780,55 @@
             "xls",
             "xlsx"
         ]
+    },
+    {
+        "name": "tijsverkoyen/css-to-inline-styles",
+        "version": "1.5.5",
+        "version_normalized": "1.5.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
+            "reference": "9753fc340726e327e4d48b7c0604f85475ae0bc3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/9753fc340726e327e4d48b7c0604f85475ae0bc3",
+            "reference": "9753fc340726e327e4d48b7c0604f85475ae0bc3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "symfony/css-selector": "~2.1|~3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2015-12-08 16:14:14",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.5.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "TijsVerkoyen\\CssToInlineStyles\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD"
+        ],
+        "authors": [
+            {
+                "name": "Tijs Verkoyen",
+                "email": "css_to_inline_styles@verkoyen.eu",
+                "role": "Developer"
+            }
+        ],
+        "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
+        "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles"
     },
     {
         "name": "maatwebsite/excel",
@@ -3891,78 +3963,6 @@
             "league",
             "rest"
         ]
-    },
-    {
-        "name": "phenx/php-svg-lib",
-        "version": "0.1",
-        "version_normalized": "0.1.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/PhenX/php-svg-lib.git",
-            "reference": "b419766515b3426c6da74b0e29e93d71c4f17099"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/b419766515b3426c6da74b0e29e93d71c4f17099",
-            "reference": "b419766515b3426c6da74b0e29e93d71c4f17099",
-            "shasum": ""
-        },
-        "time": "2015-05-06 18:49:49",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Svg\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPL-3.0"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Ménager",
-                "email": "fabien.menager@gmail.com"
-            }
-        ],
-        "description": "A library to read, parse and export to PDF SVG files.",
-        "homepage": "https://github.com/PhenX/php-svg-lib"
-    },
-    {
-        "name": "phenx/php-font-lib",
-        "version": "0.4",
-        "version_normalized": "0.4.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/PhenX/php-font-lib.git",
-            "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
-            "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
-            "shasum": ""
-        },
-        "time": "2015-05-06 20:02:39",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "FontLib\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPL-3.0"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Ménager",
-                "email": "fabien.menager@gmail.com"
-            }
-        ],
-        "description": "A library to read, parse, export and make subsets of different types of font files.",
-        "homepage": "https://github.com/PhenX/php-font-lib"
     },
     {
         "name": "dompdf/dompdf",
