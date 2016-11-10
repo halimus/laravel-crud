@@ -7,7 +7,7 @@
             <h2>Articles List (Using Datatables)</h2>
 
 
-            <table class="table table-bordered" id="users-table">
+            <table class="table table-bordered" id="datatable">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -15,6 +15,7 @@
                         <th>Article Body</th>
                         <th>Created At</th>
                         <th>Updated At</th>
+                       
                     </tr>
                 </thead>
             </table>
@@ -31,27 +32,27 @@
 <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 <script>
     $(function () {
-        $('#users-table00').DataTable({
-            processing: true,
-            serverSide: true,
-            ajax: "{{ url('articles2/anyData') }}",
-            columns: [
-                {data: 'id', name: 'id'},
-                {data: 'title', name: 'title'},
-                {data: 'body', name: 'body'},
-                {data: 'created_at', name: 'created_at'},
-                {data: 'updated_at', name: 'updated_at'}
-            ]
-        });
-
         $(function () {
-            $('#users-table').DataTable({
+            $('#datatable0').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{{ url("articles2/anyData") }}'
+                ajax: '{{ url("datatable/ajaxdata") }}'
             });
         });
-
+        
+        $('#datatable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{{ url("datatable/ajaxdata") }}',
+            columns: [
+                {data: 0, name: 'id'},
+                {data: 1, name: 'title'},
+                {data: 2, name: 'body', searchable: false},
+                {data: 3, name: 'created_at'},
+                {data: 4, name: 'updated_at'}
+            ]
+        });
+        
     });
 </script>
 @endpush

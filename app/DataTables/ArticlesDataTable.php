@@ -5,7 +5,7 @@ namespace App\DataTables;
 use App\Article;
 use Yajra\Datatables\Services\DataTable;
 
-class Articles3DataTable extends DataTable
+class ArticlesDataTable extends DataTable
 {
     /**
      * Display ajax response.
@@ -18,6 +18,10 @@ class Articles3DataTable extends DataTable
             ->eloquent($this->query())
             ->addColumn('action', 'path.to.action.view')
             ->make(true);
+        
+        // $articles = Article::select(['id', 'title', 'body', 'created_at', 'updated_at']);
+       // return Datatables::of($articles)->editColumn('title', '{{ $title."-title" }}')->make();
+        
     }
 
     /**
@@ -27,9 +31,12 @@ class Articles3DataTable extends DataTable
      */
     public function query()
     {
-        $query = Article::query();
+        //$query = Article::query();
+        $query = Article::query()->select(['id', 'title', 'created_at', 'updated_at']);
 
-        return $this->applyScopes($query);
+        //return $this->applyScopes($query);
+        
+        return $query;
     }
 
     /**
@@ -56,6 +63,7 @@ class Articles3DataTable extends DataTable
         return [
             'id',
             // add your columns
+            'title',
             'created_at',
             'updated_at',
         ];

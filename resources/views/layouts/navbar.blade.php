@@ -31,7 +31,7 @@
                         <li><a href="{{ url('articles/create') }}">New Article</a></li>
                         <li><a href="{{ url('articles') }}">Articles List</a></li>
                         <li class="divider"></li>
-                        <li><a href="{{ url('articles2') }}">Articles List (Datatables)</a></li>
+                        <li><a href="{{ url('datatable') }}">Articles List (Datatables)</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

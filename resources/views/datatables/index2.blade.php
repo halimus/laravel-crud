@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2>Articles List (Using Datatables)</h2>
+            <h2>Articles List (Using Datatables as a Service Implementation)</h2>
 
             {!! $dataTable->table() !!}
 

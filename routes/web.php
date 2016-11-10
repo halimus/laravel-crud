@@ -38,11 +38,18 @@ Route::resource('articles', 'ArticlesController');
 /*
  * Datatables routes
  */
-Route::get('articles2', 'Articles2Controller@index');
-Route::get('articles2/anyData', 'Articles2Controller@anyData');
+Route::get('datatable', 'ArticlesDTController@index');
+//Route::get('datatable/ajaxdata', 'ArticlesDTController@getBasicData'); // getBasicData, AddEditRemoveColumn
+Route::get('datatable/ajaxdata', 'ArticlesDTController@AddEditRemoveColumn');
 
 
-Route::resource('articles3', 'Article3Controller');
+
+
+/*
+ * Datatables routes as Service
+ */
+Route::resource('datatable2', 'ArticlesDTSController');
+
 
 
 /*
