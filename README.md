@@ -8,7 +8,7 @@ Very nice example for everybody who is beginner in Laravel like me ;)
 
 first thing :
 
-1- Step 1 :
+## H2 1- Step 1 : Use Composer to install dependencies
 
     cd /path/to/laravel-crud
 
