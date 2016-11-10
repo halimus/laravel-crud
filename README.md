@@ -8,20 +8,20 @@ Very nice example for everybody who is beginner in Laravel like me ;)
 
 first thing :
 
-##1- Step 1 : Use Composer to install dependencies
+###Step 1 : Use Composer to install dependencies
 
     cd /path/to/laravel-crud
 
     composer install
     
-##2- Step 2: Create Database in Your local MySQL (choose name)
-   And configure that name in your .env file.
+###Step 2: Create Database
+   Create Database in Your local MySQL (choose name), And configure that name in your .env file.
    
-##3- Step 3 Run migrations
+###Step 3 Run migrations
 
     >php artisan migrate
 
-##4- Start Accessing the Demo
+###Start Accessing the Demo
 
 
 
