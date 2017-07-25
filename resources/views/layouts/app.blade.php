@@ -11,7 +11,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Styles -->
-        <link href="/css/app.css" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- DataTables -->
         <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 
@@ -28,24 +28,21 @@
                     @include('flash::message')
                 </div>
             </div>
-            
-            
-
+              
             @yield('content')
 
         </div>
 
         <!-- Scripts -->
-        <script src="/js/app.js"></script>
-<!--        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src=" {{ asset('/js/app.js') }}"></script>
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
 
         <script>
             $('div.alert').not('.alert-important').delay(1500).slideUp(300);
             $('#flash-overlay-modal').modal();
         </script>
-        
-        
+         
         @stack('scripts')
 
     </body>

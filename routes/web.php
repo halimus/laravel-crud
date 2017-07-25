@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/about', 'AboutController@index');
 
 
+
 /*
  * Articles routes
  */
@@ -35,6 +36,7 @@ Route::get('/about', 'AboutController@index');
 Route::resource('articles', 'ArticlesController');
 
 
+
 /*
  * Datatables routes
  */
@@ -43,13 +45,10 @@ Route::get('datatable', 'ArticlesDTController@index');
 Route::get('datatable/ajaxdata', 'ArticlesDTController@AddEditRemoveColumn');
 
 
-
-
 /*
  * Datatables routes as Service
  */
 Route::resource('datatable2', 'ArticlesDTSController');
-
 
 
 /*
