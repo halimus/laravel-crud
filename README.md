@@ -1,6 +1,17 @@
 # laravel-crud
 Complete Laravel 5.3 CRUD with Authentification
 
+## Demo : 
+https://demo.halimlardjane.com/laravel-crud
+
+**The access infos:**
+
+Email address: admin@gmail.com
+
+Password: 123456
+
+
+
 ![alt tag](https://github.com/halimus/laravel-crud/blob/master/public/images/mpd2.jpg)
 
 
